@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// // stores Helicopterson's and Lincoln's info
+// // stores character's info
 const bios = {
+	//bios key (e.g pedro:)
 	pedro: {
 	name: 'Pete π',
 	role: 'Vulcan, programador, professor, cabeludo, futuro colonizador de Marte',
