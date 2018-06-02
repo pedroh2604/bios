@@ -3,6 +3,16 @@ var router = express.Router();
 
 // // stores Helicopterson's and Lincoln's info
 const bios = {
+	pedro: {
+	name: 'Pete π',
+	role: 'Vulcan, programador, professor, cabeludo, futuro colonizador de Marte',
+	birth: '1999',
+	background: 'Pedro sempre foi apaixonado por tecnologia, matemática, inglês e música. Sonha com a exploração espacial e união de diversos seres vivos por meio da tecnologia, sendo eles humanos ou não',
+	photo: '/images/pete.png',
+	quote: 'Obrigado pela confiança',
+	highlights: ['CTO da We-Sci', 'Colaborador da Hike Academy'],
+	},
+
 	helicopterson: {
 	name: 'Helicopterson dos Santos',
 	role: 'Escritor, poeta, filantropo',
@@ -13,6 +23,7 @@ const bios = {
   	quote: 'Se não for pra voar, eu nem desço pro Play',
   	highlights: ['Nasceu', 'Voou', 'Voou mais alto', 'Primeiro homem a pisar na lua', 'Sumiu'],
 	},
+
 	lincoln: {
     name: 'Abraham Lincoln',
     role: 'Ex-presidente, advogado',
@@ -23,6 +34,28 @@ const bios = {
     quote: 'Governo das pessoas, pelas pessoas, para as pessoas, nunca deixará de existir na Terra.',
     highlights: ['Aprovou a Lei da Propriedade Rural', 'Emitiu a Proclamação de Emancipação, que levou à abolição da escravatura nos EUA', 'Liderou a União à vitória da Guerra Civil'],
 	},
+
+	boça: {
+	name: 'Luis Boça',
+	role: 'Protagonista da novela Sinhá-Boça',
+	birth: '31 anos muito bem vividos mew',
+	death: '2031',
+	background: 'Boça é um filho de vó com orgulho, criado a muito leite com pera.',
+	photo: 'images/boça.png',
+	quote: 'Mundo injusto mew',
+	highlights: ['Sócio fundador do fã clube dos minigameiros', 'Fã n° 1 do Kenny G', 'Cliente preferencial do Mr. Lanches'],
+	},
+
+	joselito: {
+	name: 'Joselito',
+	role: 'Dono de dogão, pedreiro',
+	birth: '1982',
+	background: 'Se você sempre teve vontade fazer isso, mas nunca teve coragem, vote em mim',
+	death: 'Zoeira never dies',
+	photo: 'images/joselito.png',
+	quote: 'Ele não sabe brincar, ele é Joselito',
+	highlights: ['Fundador do PSN: Partido dos Sem Noção']
+	}
 };
 
 /* GET home page. */
@@ -34,11 +67,6 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
   const id = req.params.id;
   res.render('bio', bios[id]);
-});
-
-/* GET Licoln's page. */
-router.get('/lincoln', function(req, res, next) {
-  res.render('bio', bios['lincoln']);
 });
 
 module.exports = router;
