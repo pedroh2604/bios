@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// stores Helicopterson's info
-const helicoptersonInfo = {
+// // stores Helicopterson's and Lincoln's info
+const bios = {
+	helicopterson: {
 	name: 'Helicopterson dos Santos',
 	role: 'Escritor, poeta, filantropo',
   	birth: '1870',
@@ -11,10 +12,8 @@ const helicoptersonInfo = {
   	photo: '/images/helicopterson.png',
   	quote: 'Se não for pra voar, eu nem desço pro Play',
   	highlights: ['Nasceu', 'Voou', 'Voou mais alto', 'Primeiro homem a pisar na lua', 'Sumiu'],
-};
-
-// stores Lincoln's info
-const lincolnInfo = {
+	},
+	lincoln: {
     name: 'Abraham Lincoln',
     role: 'Ex-presidente, advogado',
     birth: '1809',
@@ -23,22 +22,23 @@ const lincolnInfo = {
     photo: '/images/lincoln.png',
     quote: 'Governo das pessoas, pelas pessoas, para as pessoas, nunca deixará de existir na Terra.',
     highlights: ['Aprovou a Lei da Propriedade Rural', 'Emitiu a Proclamação de Emancipação, que levou à abolição da escravatura nos EUA', 'Liderou a União à vitória da Guerra Civil'],
+	},
 };
-
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Meu primeiro WebApp Incrível' });
+  res.render('index', { bios: bios });
 });
 
-/* GET Helicopterson's page. */
-router.get('/helicopterson', function(req, res, next) {
-  res.render('bio', helicoptersonInfo);
+/* GET charecter's page. */
+router.get('/:id', function(req, res, next) {
+  const id = req.params.id;
+  res.render('bio', bios[id]);
 });
 
 /* GET Licoln's page. */
 router.get('/lincoln', function(req, res, next) {
-  res.render('bio', lincolnInfo);
+  res.render('bio', bios['lincoln']);
 });
 
 module.exports = router;
