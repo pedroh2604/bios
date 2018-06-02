@@ -5,6 +5,7 @@ var router = express.Router();
 const bios = {
 	//bios key (e.g pedro:)
 	pedro: {
+	id: 'pedro',
 	name: 'Pete π',
 	role: 'Vulcan, programador, professor, cabeludo, futuro colonizador de Marte',
 	birth: '1999',
@@ -15,6 +16,7 @@ const bios = {
 	},
 
 	helicopterson: {
+	id: 'helicopterson',
 	name: 'Helicopterson dos Santos',
 	role: 'Escritor, poeta, filantropo',
   	birth: '1870',
@@ -26,6 +28,7 @@ const bios = {
 	},
 
 	lincoln: {
+	id: 'lincoln',
     name: 'Abraham Lincoln',
     role: 'Ex-presidente, advogado',
     birth: '1809',
@@ -37,6 +40,7 @@ const bios = {
 	},
 
 	boça: {
+	id: 'boça',
 	name: 'Luis Boça',
 	role: 'Protagonista da novela Sinhá-Boça',
 	birth: '31 anos muito bem vividos mew',
@@ -48,6 +52,7 @@ const bios = {
 	},
 
 	joselito: {
+	id: 'joselito',
 	name: 'Joselito',
 	role: 'Dono de dogão, pedreiro',
 	birth: '1982',
