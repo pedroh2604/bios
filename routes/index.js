@@ -65,12 +65,12 @@ const bios = {
 };
 
 /* GET home page. */
-router.get('https://bios.herokuapp.com/', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { bios: bios });
 });
 
 /* GET charecter's page. */
-router.get('https://bios.herokuapp.com/:id', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
   const id = req.params.id;
   res.render('bio', bios[id]);
 });
